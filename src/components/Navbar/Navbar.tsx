@@ -74,6 +74,16 @@ const Navbar = ({ isDynamic = true }: TNavbar) => {
 		return () => window.removeEventListener("resize", updateCSSVariableHeightNavbar);
 	}, []);
 
+	const onClickHref = (link: string) => {
+		if (!isDynamic) {
+			window.location.href = `${window.location.origin}/#${link}`;
+		} else {
+			gsap.to(window, {
+				scrollTo: `#${link}`,
+			});
+		}
+	};
+
 	return (
 		<div
 			id="navbar"
@@ -111,14 +121,7 @@ const Navbar = ({ isDynamic = true }: TNavbar) => {
 							<li
 								className={`${isOutBound || !isDynamic ? "font-semibold text-black" : "font-normal text-white"} uppercase cursor-pointer text-xl text-center mx-5 last:mx-0`}
 								key={link.id}>
-								<a
-									onClick={() => {
-										gsap.to(window, {
-											scrollTo: `#${link.id}`,
-										});
-									}}>
-									{link.title}
-								</a>
+								<a onClick={() => onClickHref(link.id)}>{link.title}</a>
 							</li>
 						))}
 					</ul>
