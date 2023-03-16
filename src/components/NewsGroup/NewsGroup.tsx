@@ -31,7 +31,7 @@ const NewsGroup = ({ news }: TNewsGroup) => {
 	};
 
 	const handleOpenPost = () => {
-		window.open(`${window.location.href}/posts/${news[curIdx].id}`);
+		window.open(`${window.location.origin}/posts/${news[curIdx].id}`);
 	};
 
 	const handleOnClickCard = (idx: number) => {
