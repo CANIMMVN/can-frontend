@@ -1,10 +1,10 @@
 #news #news-slider .image-container {
   &.normal-card {
     opacity: 0.6;
-    width: 320px;
+    min-width: 320px;
   }
   &.selected-card {
     opacity: 1;
-    width: 416px;
+    min-width: 416px;
   }
 }

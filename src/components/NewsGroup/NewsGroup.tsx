@@ -10,13 +10,13 @@ type TNewsGroup = {
 
 const NewsGroup = ({ news }: TNewsGroup) => {
 	const [titleHoverState, setTitleHoverState] = useState<boolean>(false);
-	const [curIdx, setCurIdx] = useState(2);
+	const [curIdx, setCurIdx] = useState(0);
 
 	const onClickPrev = () => {
 		if (curIdx > 0) {
 			setCurIdx((curIdx) => curIdx - 1);
-			if (curIdx < news.length - 2) {
-				document.getElementById("news-slider")!.scrollLeft -= 340;
+			if (curIdx < news.length - 1) {
+				document.getElementById("news-slider")!.scrollLeft -= 320;
 			}
 		}
 	};
@@ -24,8 +24,8 @@ const NewsGroup = ({ news }: TNewsGroup) => {
 	const onClickNext = () => {
 		if (curIdx < news.length - 1) {
 			setCurIdx((curIdx) => curIdx + 1);
-			if (curIdx >= 2) {
-				document.getElementById("news-slider")!.scrollLeft += 340;
+			if (curIdx >= 1) {
+				document.getElementById("news-slider")!.scrollLeft += 320;
 			}
 		}
 	};
