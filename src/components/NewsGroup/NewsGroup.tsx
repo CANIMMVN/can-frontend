@@ -10,13 +10,13 @@ type TNewsGroup = {
 
 const NewsGroup = ({ news }: TNewsGroup) => {
 	const [titleHoverState, setTitleHoverState] = useState<boolean>(false);
-	const [curIdx, setCurIdx] = useState(2);
+	const [curIdx, setCurIdx] = useState(0);
 
 	const onClickPrev = () => {
 		if (curIdx > 0) {
 			setCurIdx((curIdx) => curIdx - 1);
-			if (curIdx < news.length - 2) {
-				document.getElementById("news-slider")!.scrollLeft -= 340;
+			if (curIdx < news.length - 1) {
+				document.getElementById("news-slider")!.scrollLeft -= 320;
 			}
 		}
 	};
@@ -24,8 +24,8 @@ const NewsGroup = ({ news }: TNewsGroup) => {
 	const onClickNext = () => {
 		if (curIdx < news.length - 1) {
 			setCurIdx((curIdx) => curIdx + 1);
-			if (curIdx >= 2) {
-				document.getElementById("news-slider")!.scrollLeft += 340;
+			if (curIdx >= 1) {
+				document.getElementById("news-slider")!.scrollLeft += 320;
 			}
 		}
 	};
@@ -78,18 +78,21 @@ const NewsGroup = ({ news }: TNewsGroup) => {
 					id="news-slider"
 					className="w-full mt-16 md:mt-36 mb-6 md:mb-16 items-center flex flex-row overflow-x-scroll scrollbar-hide">
 					{news.map((item, idx) => (
-						<img
+						<div
 							key={item.id}
-							className={`${idx === curIdx && "selected-news-card"} w-[332px] h-[380px] object-cover mx-2 last:mr-0 cursor-pointer opacity-60`}
-							src={item.imgUrl}
-							onClick={() => handleOnClickCard(idx)}
-							onMouseEnter={() => {
-								if (idx === curIdx) setTitleHoverState(true);
-							}}
-							onMouseLeave={() => {
-								if (idx === curIdx) setTitleHoverState(false);
-							}}
-						/>
+							className={`image-container ${idx === curIdx ? "selected-card" : "normal-card"} aspect-square mx-2 last:mr-0 cursor-pointer`}>
+							<img
+								className="h-full w-full object-cover"
+								src={item.imgUrl}
+								onClick={() => handleOnClickCard(idx)}
+								onMouseEnter={() => {
+									if (idx === curIdx) setTitleHoverState(true);
+								}}
+								onMouseLeave={() => {
+									if (idx === curIdx) setTitleHoverState(false);
+								}}
+							/>
+						</div>
 					))}
 				</div>
 				<div className="below-navigator-container flex md:hidden my-6 justify-center">
