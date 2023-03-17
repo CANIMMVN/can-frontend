@@ -78,18 +78,21 @@ const NewsGroup = ({ news }: TNewsGroup) => {
 					id="news-slider"
 					className="w-full mt-16 md:mt-36 mb-6 md:mb-16 items-center flex flex-row overflow-x-scroll scrollbar-hide">
 					{news.map((item, idx) => (
-						<img
+						<div
 							key={item.id}
-							className={`${idx === curIdx && "selected-news-card"} w-[332px] h-[380px] object-cover mx-2 last:mr-0 cursor-pointer opacity-60`}
-							src={item.imgUrl}
-							onClick={() => handleOnClickCard(idx)}
-							onMouseEnter={() => {
-								if (idx === curIdx) setTitleHoverState(true);
-							}}
-							onMouseLeave={() => {
-								if (idx === curIdx) setTitleHoverState(false);
-							}}
-						/>
+							className={`image-container ${idx === curIdx ? "selected-card" : "normal-card"} aspect-square mx-2 last:mr-0 cursor-pointer`}>
+							<img
+								className="h-full w-full object-cover"
+								src={item.imgUrl}
+								onClick={() => handleOnClickCard(idx)}
+								onMouseEnter={() => {
+									if (idx === curIdx) setTitleHoverState(true);
+								}}
+								onMouseLeave={() => {
+									if (idx === curIdx) setTitleHoverState(false);
+								}}
+							/>
+						</div>
 					))}
 				</div>
 				<div className="below-navigator-container flex md:hidden my-6 justify-center">
