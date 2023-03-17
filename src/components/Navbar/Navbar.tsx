@@ -99,7 +99,7 @@ const Navbar = ({ isDynamic = true }: TNavbar) => {
 								fill
 								unoptimized
 								sizes=""
-								className="!relative"
+								className="!relative !w-auto"
 							/>
 						</div>
 						<div className={`${isContrastStyle && "hidden"} logo-white-container h-12 relative`}>
@@ -109,7 +109,7 @@ const Navbar = ({ isDynamic = true }: TNavbar) => {
 								fill
 								unoptimized
 								sizes=""
-								className="!relative"
+								className="!relative !w-auto"
 							/>
 						</div>
 					</div>
