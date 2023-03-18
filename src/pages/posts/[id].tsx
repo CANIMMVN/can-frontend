@@ -70,7 +70,7 @@ export default function FBPost({ post }: TFBPost) {
 				<div className="image-container-wrap relative mb-10 md:mb-20 after:content-[''] after:absolute after:-z-10 after:w-full after:h-[100vh] after:bg-lightBlue after:bottom-1/2">
 					<div className="image-container w-[80%] mx-auto">
 						<img
-							className="w-full h-full object-contain"
+							className="w-full h-full max-h-[50vh] object-contain"
 							src={post.imgUrl}
 						/>
 					</div>
