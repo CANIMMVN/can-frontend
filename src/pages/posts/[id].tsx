@@ -45,7 +45,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 export default function FBPost({ post }: TFBPost) {
 	const title = formatNewsTitle(post.message);
-	const paragraphs = post.message.split("\n\n");
+	const paragraphs = post.message.split("\n");
 	return (
 		<>
 			<Head>
@@ -80,7 +80,7 @@ export default function FBPost({ post }: TFBPost) {
 						{paragraphs.map((paragraph, index) => (
 							<span
 								key={index}
-								className="block text-xl font-medium mb-4">
+								className="flex text-xl font-medium mb-4">
 								{paragraph}
 							</span>
 						))}
