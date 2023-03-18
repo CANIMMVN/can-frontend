@@ -10,7 +10,7 @@ type TLongButton = {
 const LongButton = (props: TLongButton) => {
 	return (
 		<div
-			className={`${!props.useExternal ? "internal-effect" : props.hoverState && "external-effect"} ${props.direction === Direction.Right && "rotate-180"} button long-button h-8 w-20 rounded-full border border-black flex items-center justify-center overflow-hidden`}
+			className={`button long-button ${!props.useExternal ? "internal-effect" : props.hoverState && "external-effect"} ${props.direction === Direction.Right && "rotate-180"} h-8 w-20 rounded-full border border-black flex items-center justify-center overflow-hidden select-none`}
 			onClick={props.handleOnClick}>
 			<div className="icon-container stroke-black w-1/2">
 				<svg

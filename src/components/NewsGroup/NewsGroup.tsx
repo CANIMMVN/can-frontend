@@ -76,7 +76,7 @@ const NewsGroup = ({ news }: TNewsGroup) => {
 				</div>
 				<div
 					id="news-slider"
-					className="w-full mt-16 md:mt-36 mb-6 md:mb-16 items-center flex flex-row overflow-x-scroll scrollbar-hide">
+					className="w-full mt-16 md:mt-36 mb-6 md:mb-16 items-center flex flex-row overflow-x-scroll scrollbar-hide select-none">
 					{news.map((item, idx) => (
 						<div
 							key={item.id}
