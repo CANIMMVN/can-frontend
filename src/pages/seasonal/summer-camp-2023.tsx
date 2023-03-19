@@ -4,7 +4,7 @@ import contentGenerator, { TListContent, createSpaceContentNode, bold, link, lis
 
 export default () => {
 	const title = "SUMMER CAMP 2023";
-	const imageSrc = "/contents/seasonal/summerCamp2023/Poster - SUMMER CAMP 2023.png";
+	const imageSrc = "/contents/seasonal/summerCamp2023/Poster - SUMMER CAMP 2023.jpg";
 	const space = createSpaceContentNode();
 	const listContent: TListContent = [
 		bold("Đất nước: Canada"),
