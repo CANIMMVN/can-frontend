@@ -1,6 +1,7 @@
 export enum ContentType {
 	SPACE,
 	PLAIN,
+	PLAIN_CLOSE,
 	BOLD,
 	LIST_ITEM,
 	LINK,
@@ -30,6 +31,10 @@ export const plain = (content: TContentNode["content"]) => {
 	return createContentNode(ContentType.PLAIN, content);
 };
 
+export const plainClose = (content: TContentNode["content"]) => {
+	return createContentNode(ContentType.PLAIN_CLOSE, content);
+};
+
 export const bold = (content: TContentNode["content"]) => {
 	return createContentNode(ContentType.BOLD, content);
 };
@@ -49,13 +54,21 @@ export default (listContent: TListContent) => {
 			return (
 				<span
 					key={index}
-					className="flex mb-4"></span>
+					className="flex h-4"></span>
 			);
 		} else if (typeNode === ContentType.PLAIN) {
 			return (
 				<span
 					key={index}
-					className="flex text-xl font-medium mb-4">
+					className="flex text-xl font-medium my-2">
+					{contentNode.content}
+				</span>
+			);
+		} else if (typeNode === ContentType.PLAIN_CLOSE) {
+			return (
+				<span
+					key={index}
+					className="flex text-xl font-medium">
 					{contentNode.content}
 				</span>
 			);
@@ -71,7 +84,7 @@ export default (listContent: TListContent) => {
 			return (
 				<span
 					key={index}
-					className="flex relative text-xl font-medium mb-2">
+					className="flex relative text-xl font-medium">
 					&#8226; {contentNode.content}
 				</span>
 			);
@@ -81,7 +94,7 @@ export default (listContent: TListContent) => {
 				contentProcessed?.length === 2 && (
 					<a
 						key={index}
-						className="flex text-xl text-strongBlue mb-4"
+						className="flex text-xl text-strongBlue my-2"
 						href={contentProcessed[1]}
 						download>
 						{contentProcessed[0]}
