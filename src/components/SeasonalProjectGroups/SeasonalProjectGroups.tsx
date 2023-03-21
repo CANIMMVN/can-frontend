@@ -1,19 +1,14 @@
 import React, { useRef } from "react";
-import { TComponent } from "../../utils/types";
 import STYLE_GROUPS from "../../utils/styles";
 import gsap from "gsap/dist/gsap";
 import Draggable from "gsap/dist/Draggable";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import SeasonalProject from "./SeasonalProject";
-import { LIST_PROJECT } from "./setting";
 import TitleButton from "../Buttons/TitleButton";
 import { useIsomorphicLayoutEffect } from "../../utils/helper";
+import { LIST_GENERAL_INFO_PROJECT } from "./setting";
 
-type TSubComponent = {
-	SeasonalProject: typeof SeasonalProject;
-};
-
-const SeasonalProjectGroups: TComponent & TSubComponent = () => {
+const SeasonalProjectGroups = () => {
 	const ref_seft = useRef<HTMLDivElement>(null);
 	const ref_slider = useRef<HTMLDivElement>(null);
 
@@ -51,12 +46,13 @@ const SeasonalProjectGroups: TComponent & TSubComponent = () => {
 					className="flex flex-row mt-4 mx-15 md:mx-8"
 					id="slider"
 					ref={ref_slider}>
-					{LIST_PROJECT.map((project, index) => (
+					{LIST_GENERAL_INFO_PROJECT.map((item) => (
 						<SeasonalProject
-							key={index}
-							id={project.id}
-							title={project.title}
-							imgSrc={project.imgSrc}
+							key={item.id}
+							id={item.id}
+							title={item.title}
+							imgSrc={item.imgSrc}
+							imgAlt={item.imgAlt}
 						/>
 					))}
 				</div>
@@ -64,7 +60,5 @@ const SeasonalProjectGroups: TComponent & TSubComponent = () => {
 		</section>
 	);
 };
-
-SeasonalProjectGroups.SeasonalProject = SeasonalProject;
 
 export default SeasonalProjectGroups;
