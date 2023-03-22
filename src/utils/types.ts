@@ -14,3 +14,8 @@ export enum State {
 	SUCCESS,
 	FAILURE,
 }
+
+export type Image = {
+	imgSrc: string;
+	imgAlt: string;
+};
