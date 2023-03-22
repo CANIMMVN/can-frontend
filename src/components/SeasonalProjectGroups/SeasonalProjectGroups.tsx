@@ -51,8 +51,7 @@ const SeasonalProjectGroups = () => {
 							key={item.id}
 							id={item.id}
 							title={item.title}
-							imgSrc={item.imgSrc}
-							imgAlt={item.imgAlt}
+							thumbnailImage={item.thumbnailImage}
 						/>
 					))}
 				</div>

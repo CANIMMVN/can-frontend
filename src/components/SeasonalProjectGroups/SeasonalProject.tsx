@@ -24,9 +24,9 @@ const SeasonalProject = (props: TSeasonalProjectGeneralInfo) => {
 				</div>
 				<div className="image-container flex">
 					<img
-						className="w-full aspect-[29/20] object-cover object-top rounded-xl overflow-hidden"
-						src={props.imgSrc}
-						alt={props.imgAlt}
+						className="w-full aspect-[29/20] object-contain rounded-xl overflow-hidden"
+						src={props.thumbnailImage.imgSrc}
+						alt={props.thumbnailImage.imgAlt}
 					/>
 				</div>
 			</Link>

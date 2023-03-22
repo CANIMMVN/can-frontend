@@ -1,11 +1,11 @@
 import { TListContent, bold, createSpaceContentNode, link, listItem, plain, plainClose } from "../../services/ContentGenerator";
-import { Assert } from "../../utils/types";
+import { Assert, Image } from "../../utils/types";
 
 export type TSeasonalProject = {
 	id: string;
 	title: string;
-	imgSrc: string;
-	imgAlt: string;
+	thumbnailImage: Image;
+	posterImage: Image;
 	listContent: TListContent;
 };
 
@@ -18,8 +18,14 @@ export const LIST_INFO_PROJECT = Assert<TSeasonalProject[]>([
 	{
 		id: "summer-camp-2023",
 		title: "SUMMER CAMP 2023",
-		imgSrc: "/contents/seasonal/summerCamp2023/Poster - SUMMER CAMP 2023.jpg",
-		imgAlt: "Poster - SUMMER CAMP 2023.jpg",
+		thumbnailImage: {
+			imgSrc: "/contents/seasonal/summerCamp2023/Thumbnail-SummerCamp2023.jpg",
+			imgAlt: "Thumbnail-SummerCamp2023.jpg",
+		},
+		posterImage: {
+			imgSrc: "/contents/seasonal/summerCamp2023/Poster-SummerCamp2023.jpg",
+			imgAlt: "Poster-SummerCamp2023.jpg",
+		},
 		listContent: [
 			bold("Đất nước: Canada"),
 			bold("Thời gian: 03/07/2023 – 29/07/2023 (2 tuần)"),
@@ -70,8 +76,14 @@ export const LIST_INFO_PROJECT = Assert<TSeasonalProject[]>([
 	{
 		id: "winter-camp-2023",
 		title: "WINTER CAMP 2023",
-		imgSrc: "/contents/seasonal/winterCamp2023/Winter Camp 2023.jpg",
-		imgAlt: "Winter Camp 2023.jpg",
+		thumbnailImage: {
+			imgSrc: "/contents/seasonal/winterCamp2023/Thumbnail-WinterCamp2023.jpg",
+			imgAlt: "Thumbnail-WinterCamp2023.jpg",
+		},
+		posterImage: {
+			imgSrc: "/contents/seasonal/winterCamp2023/Poster-WinterCamp2023.jpg",
+			imgAlt: "Poster-WinterCamp2023.jpg",
+		},
 		listContent: [
 			bold("Đất nước: Canada"),
 			bold("Thời gian: 15/01/2023 – 29/01/2023 (2 tuần)"),
@@ -120,8 +132,14 @@ export const LIST_INFO_PROJECT = Assert<TSeasonalProject[]>([
 	{
 		id: "go-toronto-with-cidesco",
 		title: `"GO TORONTO WITH CIDESCO" - EVENT`,
-		imgSrc: "/contents/seasonal/goTorontoWithCidesco/Poster - Go Toronto With Cidesco.jpg",
-		imgAlt: "Poster - Go Toronto With Cidesco.jpg",
+		thumbnailImage: {
+			imgSrc: "/contents/seasonal/goTorontoWithCidesco/Thumbnail-GoTorontoWithCidesco.jpg",
+			imgAlt: "Thumbnail-GoTorontoWithCidesco.jpg",
+		},
+		posterImage: {
+			imgSrc: "/contents/seasonal/goTorontoWithCidesco/Poster-GoTorontoWithCidesco.jpg",
+			imgAlt: "Poster-GoTorontoWithCidesco.jpg",
+		},
 		listContent: [
 			plain("Sự kiện được đồng tổ chức bởi Can Immigration Vietnam, Georgian College, Vo Dung International Academy cùng với sự góp mặt của những chuyên gia đi đầu trong lĩnh vực làm đẹp, du học và định cư Canada."),
 			space,
@@ -157,13 +175,15 @@ export const LIST_INFO_PROJECT = Assert<TSeasonalProject[]>([
 	},
 ]);
 
-export type TSeasonalProjectGeneralInfo = Omit<TSeasonalProject, "listContent">;
+export type TSeasonalProjectGeneralInfo = Omit<TSeasonalProject, "listContent" | "posterImage">;
 
-export const LIST_GENERAL_INFO_PROJECT: TSeasonalProjectGeneralInfo[] = LIST_INFO_PROJECT.map<Omit<TSeasonalProject, "listContent">>((item) => {
+export const LIST_GENERAL_INFO_PROJECT: TSeasonalProjectGeneralInfo[] = LIST_INFO_PROJECT.map<TSeasonalProjectGeneralInfo>((item) => {
 	return {
 		id: item.id,
-		imgSrc: item.imgSrc,
-		imgAlt: item.imgAlt,
+		thumbnailImage: {
+			imgSrc: item.thumbnailImage.imgSrc,
+			imgAlt: item.thumbnailImage.imgAlt,
+		},
 		title: item.title,
 	};
 });

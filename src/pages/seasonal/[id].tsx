@@ -59,8 +59,8 @@ const seasonalPost: NextPage<TSeasonalProjectProps> = ({ data }) => {
 					<div className="image-container w-[80%] mx-auto">
 						<img
 							className="w-full h-full max-h-[50vh] object-contain"
-							src={data.imgSrc}
-							alt={data.imgSrc}
+							src={data.posterImage.imgSrc}
+							alt={data.posterImage.imgAlt}
 						/>
 					</div>
 				</div>
