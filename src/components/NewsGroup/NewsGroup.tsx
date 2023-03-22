@@ -45,6 +45,9 @@ const NewsGroup = ({ news }: TNewsGroup) => {
 	return (
 		<section id="news">
 			<div className="news-container my-17.5 md:my-25">
+				<div className="title-container flex items-center justify-center w-25 md:w-40 h-6 md:h-10 border rounded-full border-black my-8 mx-15 md:mx-8">
+					<span className="title font-bold text-xs md:text-2xl mb-0.5 md:mb-1">Tin tức</span>
+				</div>
 				<div className="flex flex-row justify-between mx-15 md:mx-8">
 					<div
 						className="title font-bold text-2xl md:text-4xl uppercase cursor-pointer"
