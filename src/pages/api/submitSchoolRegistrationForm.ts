@@ -22,7 +22,6 @@ export default _nextConnect
 	.use(guardContentLength)
 	.use(handleFiles(FILE_FORM_UPLOAD_NAME))
 	.post(async (request: NextConnectApiRequest, response) => {
-		// request.emit("close");
 		const files = request.files;
 		const data: TSchoolRegistrationForm = request.body;
 		data.semester = JSON.parse((<unknown>data.semester) as string);
