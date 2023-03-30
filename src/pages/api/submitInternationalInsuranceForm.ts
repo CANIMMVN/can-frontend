@@ -5,7 +5,7 @@ import { html } from "../../utils/settings/setting";
 import { TInternationalInsuranceForm } from "../../components/ServiceGroups/types";
 import { InternationalInsuranceFormBody } from "../../components/ServiceGroups/setting";
 
-export default _nextConnect.post(async (request: NextApiRequest, response: NextApiResponse) => {
+export default new _nextConnect().instance.post(async (request: NextApiRequest, response: NextApiResponse) => {
 	const data: TInternationalInsuranceForm = request.body;
 	nodemailerTransporter
 		.sendMail({

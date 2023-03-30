@@ -5,7 +5,7 @@ import { ConsultationFormBody } from "../../components/Consultation/setting";
 import { html } from "../../utils/settings/setting";
 import { TConsultationForm } from "../../components/Consultation/types";
 
-export default _nextConnect.post(async (request: NextApiRequest, response: NextApiResponse) => {
+export default new _nextConnect().instance.post(async (request: NextApiRequest, response: NextApiResponse) => {
 	const data: TConsultationForm = request.body;
 	nodemailerTransporter
 		.sendMail({
