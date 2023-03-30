@@ -31,8 +31,8 @@ const InternationalInsuranceForm = () => {
 
 	const handleSubmit = () => {
 		setIsDisplayNameError(false);
-		setIsDisplayEmailError(false);
 		setIsDisplayPhoneError(false);
+		setIsDisplayEmailError(false);
 		if (!name) {
 			setIsDisplayNameError(true);
 			return;
@@ -140,6 +140,8 @@ const InternationalInsuranceForm = () => {
 											type="tel"
 											placeHolder="Số điện thoại"
 											errorMessage="Số điện thoại chưa phù hợp"
+											isRequired
+											isDisplayErrorMessage={isDisplayPhoneError}
 											handleChangeValue={setPhone}
 										/>
 									</div>
