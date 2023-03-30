@@ -15,8 +15,8 @@ import FormContext from "./FormContext";
 import { StateModal } from "../../Toolkits";
 import toast from "react-hot-toast";
 
+export const TITLE = "Đăng ký trường học";
 const SchoolRegistrationForm = () => {
-	const TITLE = "Đăng ký trường học";
 	const TIME_STATE_PRESENT = 3000;
 
 	const [name, setName] = useState<TSchoolRegistrationForm["name"]>();

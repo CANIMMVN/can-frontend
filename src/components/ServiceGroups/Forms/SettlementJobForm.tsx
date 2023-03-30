@@ -14,8 +14,8 @@ import FormContext from "./FormContext";
 import { StateModal } from "../../Toolkits";
 import toast from "react-hot-toast";
 
+export const TITLE = "Đăng ký việc làm định cư";
 const SettlementJobForm = () => {
-	const TITLE = "Đăng ký việc làm định cư";
 	const TIME_STATE_PRESENT = 5000;
 
 	const [name, setName] = useState<TSettlementJobForm["name"]>();

@@ -12,8 +12,8 @@ import FormContext from "./FormContext";
 import { StateModal } from "../../Toolkits";
 import toast from "react-hot-toast";
 
+export const TITLE = "Bảo hiểm quốc tế";
 const InternationalInsuranceForm = () => {
-	const TITLE = "Bảo hiểm quốc tế";
 	const TIME_STATE_PRESENT = 3000;
 
 	const [name, setName] = useState<TInternationalInsuranceForm["name"]>();

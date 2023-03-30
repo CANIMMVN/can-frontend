@@ -1,4 +1,7 @@
 import { MAX_NUMBER_FILE, MAX_CONTENT_FILE_SIZE, FILE_FORM_UPLOAD_NAME } from "../../utils/settings/setting";
+import { TITLE as InternationalInsuranceTitle } from "./Forms/InternationalInsuranceForm";
+import { TITLE as SchoolRegistrationTitle } from "./Forms/SchoolRegistrationForm";
+import { TITLE as SettlementJobTitle } from "./Forms/SettlementJobForm";
 export { MAX_NUMBER_FILE, MAX_CONTENT_FILE_SIZE, FILE_FORM_UPLOAD_NAME };
 import { TInternationalInsuranceForm, TSchoolRegistrationForm, TSettlementJobForm } from "./types";
 
@@ -25,7 +28,7 @@ export enum Semester {
 }
 
 export const SchoolRegistrationFormBody = (data: TSchoolRegistrationForm) => {
-	return `<h2 class="title-form">ĐĂNG KÝ TRƯỜNG HỌC</h2>
+	return `<h2 class="title-form">${SchoolRegistrationTitle.toLocaleUpperCase()}</h2>
     <div class="form-container">
         <table>
             <tr>
@@ -89,7 +92,7 @@ export const SchoolRegistrationFormBody = (data: TSchoolRegistrationForm) => {
 };
 
 export const SettlementJobFormBody = (data: TSettlementJobForm) => {
-	return `<h2 class="title-form">ĐĂNG KÝ TRƯỜNG HỌC</h2>
+	return `<h2 class="title-form">${SettlementJobTitle.toLocaleUpperCase()}</h2>
     <div class="form-container">
         <table>
             <tr>
@@ -129,7 +132,7 @@ export const SettlementJobFormBody = (data: TSettlementJobForm) => {
 };
 
 export const InternationalInsuranceFormBody = (data: TInternationalInsuranceForm) => {
-	return `<h2 class="title-form">ĐĂNG KÝ TRƯỜNG HỌC</h2>
+	return `<h2 class="title-form">${InternationalInsuranceTitle.toLocaleUpperCase()}</h2>
     <div class="form-container">
         <table>
             <tr>
