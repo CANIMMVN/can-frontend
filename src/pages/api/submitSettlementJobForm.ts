@@ -48,7 +48,7 @@ export default new _nextConnect().instance
 				files.forEach((file) => {
 					unlink(file.path, (error) => {
 						if (error) {
-							console.log(error);
+							console.trace(error);
 							throw error;
 						}
 						console.log(`${file.path} was deleted`);
@@ -58,7 +58,7 @@ export default new _nextConnect().instance
 				return response.status(200).json({ success: true });
 			})
 			.catch((error) => {
-				console.log(error);
+				console.trace(error);
 				return response.status(400).json({ message: "Bad request" });
 			});
 	});

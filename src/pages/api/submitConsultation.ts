@@ -15,11 +15,11 @@ export default new _nextConnect().instance.post(async (request: NextApiRequest, 
 			subject: `Yêu cầu Tư vấn miễn phí của "${data.name}"`,
 		})
 		.then((result) => {
-			console.log(result);
+			console.log(`user: ${data.name} - ${data.id} sent Consultation mail`);
 			return response.status(200).json({ success: true });
 		})
 		.catch((error) => {
-			console.log(error);
+			console.trace(error);
 			return response.status(400).json({ message: "Bad request" });
 		});
 });
