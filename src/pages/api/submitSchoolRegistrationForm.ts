@@ -18,7 +18,7 @@ type NextConnectApiRequest = NextApiRequest & {
 	files: Express.Multer.File[];
 };
 
-export default _nextConnect
+export default new _nextConnect().instance
 	.use(guardContentLength)
 	.use(handleFiles(FILE_FORM_UPLOAD_NAME))
 	.post(async (request: NextConnectApiRequest, response) => {
