@@ -19,7 +19,7 @@ export default new _nextConnect().instance.post(async (request: NextApiRequest, 
 			return response.status(200).json({ success: true });
 		})
 		.catch((error) => {
-			console.log(error);
+			console.trace(error);
 			return response.status(400).json({ message: "Bad request" });
 		});
 });

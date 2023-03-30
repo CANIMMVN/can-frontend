@@ -50,8 +50,7 @@ const Consultation = () => {
 					console.log(response);
 				})
 				.catch((error) => {
-					console.log("error");
-					console.log(error);
+					console.trace(error);
 					throw new Error(`Error for toaster: ${error}`);
 				})
 				.finally(() => {

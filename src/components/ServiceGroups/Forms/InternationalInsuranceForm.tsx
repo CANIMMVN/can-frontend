@@ -70,8 +70,7 @@ const InternationalInsuranceForm = () => {
 					}, TIME_STATE_PRESENT);
 				})
 				.catch((error) => {
-					console.log("error");
-					console.log(error);
+					console.trace(error);
 					setMirrorState(State.FAILURE);
 					formContext?.setState(State.NONE);
 					setTimeout(() => {
