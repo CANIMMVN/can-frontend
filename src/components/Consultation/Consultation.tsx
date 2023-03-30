@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import { isEmailValid, isPhoneValid } from "../../utils/validator";
-import TitleButton from "../Buttons/TitleButton";
+import TitleButton, { TTitleButton } from "../Buttons/TitleButton";
 import InputField from "../Fields/InputField";
 import axios from "axios";
 import { TConsultationForm } from "./types";
 import { v4 as uuidv4 } from "uuid";
+import toast from "react-hot-toast";
+import { State } from "../../utils/types";
 
+export const TITLE = "Tư vấn miễn phí";
 const Consultation = () => {
+	const [submissionState, setSubmissionState] = useState<TTitleButton["displayState"]>(State.NONE);
 	const [name, setName] = useState<string>();
 	const [isDisplayNameError, setIsDisplayNameError] = useState<boolean>(false);
 	const [email, setEmail] = useState<string>();
@@ -31,21 +35,34 @@ const Consultation = () => {
 			return;
 		}
 
-		await axios
-			.post("api/submitConsultation", {
-				id: uuidv4(),
-				name: name,
-				email: email,
-				phone: phone,
-			} as TConsultationForm)
-			.then((response) => {
-				console.log("response");
-				console.log(response);
-			})
-			.catch((error) => {
-				console.log("error");
-				console.log(error);
-			});
+		setSubmissionState(State.LOADING);
+
+		toast.promise(
+			axios
+				.post("api/submitConsultation", {
+					id: uuidv4(),
+					name: name,
+					email: email,
+					phone: phone,
+				} as TConsultationForm)
+				.then((response) => {
+					console.log("response");
+					console.log(response);
+				})
+				.catch((error) => {
+					console.log("error");
+					console.log(error);
+					throw new Error(`Error for toaster: ${error}`);
+				})
+				.finally(() => {
+					setSubmissionState(State.NONE);
+				}),
+			{
+				loading: `Yêu cầu ${TITLE} đang được xử lý...`,
+				success: `Yêu cầu ${TITLE} thành công!`,
+				error: `Yêu cầu ${TITLE} không thành công. Hãy thử lại.`,
+			},
+		);
 	};
 
 	const fieldContainer = "field-container my-8";
@@ -61,7 +78,7 @@ const Consultation = () => {
 					/>
 				</div>
 				<div className="title-container col-span-3 flex flex-col justify-center items-center text-center text-strongPink">
-					<span className="title text-[40px] md:text-[80px] font-bold uppercase">Tư vấn miễn phí</span>
+					<span className="title text-[40px] md:text-[80px] font-bold uppercase">{TITLE}</span>
 					<div className="description-container flex flex-col mx-4">
 						<span className="description md:text-3xl md:leading-[38px] font-semibold">Hãy để chuyên viên tư vấn của Can Immigration Vietnam</span>
 						<span className="description md:text-3xl md:leading-[38px] font-semibold">giúp bạn chinh phục giấc mơ đặt chân đến Canada nhé!</span>
@@ -105,6 +122,7 @@ const Consultation = () => {
 							buttonColor="strongPink"
 							title="Đặt hẹn"
 							handleOnClick={handleSubmit}
+							displayState={submissionState}
 						/>
 					</div>
 				</div>

@@ -77,6 +77,7 @@ const InternationalInsuranceForm = () => {
 					setTimeout(() => {
 						setMirrorState(State.NONE);
 					}, TIME_STATE_PRESENT);
+					throw new Error(`Error for toaster: ${error}`);
 				}),
 			{
 				loading: `Yêu cầu ${TITLE} đang được xử lý...`,
