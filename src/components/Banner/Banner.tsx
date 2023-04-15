@@ -7,19 +7,12 @@ const Banner = () => {
 				<div className="video-container w-full aspect-video">
 					<video
 						className="object-cover w-full h-full"
+						src="/assets/videos/canada-video_x264.mp4"
 						autoPlay
 						muted
 						loop
-						playsInline>
-						<source
-							src="/assets/videos/canada-video_x265.mp4"
-							type="video/mp4; codecs=avc1"
-						/>
-						<source
-							src="/assets/videos/canada-video_x264.mp4"
-							type="video/mp4; codecs=hvc1"
-						/>
-					</video>
+						playsInline
+					/>
 				</div>
 				<div className="sash-ribbon-wrap w-full h-[7.5%] sm:h-[10%] bg-white absolute bottom-[10%] flex flex-row overflow-hidden">
 					<SashRibbon key={1} />
