@@ -1,6 +1,6 @@
 {
   "name": "can-frontend",
-  "version": "1.2.11.3",
+  "version": "1.2.12.3",
   "private": true,
   "scripts": {
     "dev": "next dev",
