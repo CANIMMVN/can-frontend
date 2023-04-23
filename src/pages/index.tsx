@@ -2,23 +2,30 @@ import Head from "next/head";
 import { Banner, Navbar, TagInfoGroups, SeasonalProjectGroups, NewsGroup, ProgramGroups, ServiceGroups, Consultation, AdvisoryGroups, ApprovalCases, Footer } from "../components";
 import { ModalContext, ModalPortal, Toaster } from "../components/Toolkits";
 import { useState } from "react";
-import { GetStaticProps, InferGetStaticPropsType } from "next";
+import { GetServerSideProps, InferGetServerSidePropsType} from "next";
 import { getPageNews } from "../services/facebook-api";
+import { TNews } from "../components/NewsGroup/types";
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps<{
+	news: TNews[];
+}> = async () => {
 	try {
 		return {
-			props: { news: await getPageNews() },
+			props: {
+				news: await getPageNews(),
+			},
 		};
 	} catch (err) {
 		console.log("__getStaticProps error: ", err);
-		return {
-			props: { news: [] },
-		};
 	}
+	return {
+		props: {
+			news: [],
+		},
+	};
 };
 
-export default function Home({ news }: InferGetStaticPropsType<typeof getStaticProps>) {
+export default function Home({ news }: InferGetServerSidePropsType<typeof getServerSideProps>) {
 	const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
 	const [modalComponent, setModalComponent] = useState<JSX.Element | null>(null);
 

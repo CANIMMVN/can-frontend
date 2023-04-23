@@ -1,6 +1,6 @@
 import Head from "next/head";
-import { GetStaticProps } from "next";
-import { getPostById, getPageNews } from "../../services/facebook-api";
+import { GetServerSideProps, InferGetServerSidePropsType } from "next";
+import { getPostById} from "../../services/facebook-api";
 import { formatDate, formatNewsTitle } from "../../utils/helper";
 import { Navbar, Footer } from "../../components";
 
@@ -11,39 +11,35 @@ export type TPost = {
 	imgUrl: string;
 };
 
-type TFBPost = {
-	post: TPost;
-};
-
-export async function getStaticPaths() {
-	const paths = (await getPageNews()).map((post) => {
-		return {
-			params: { id: post.id },
-		};
-	});
-
-	return {
-		paths,
-		fallback: false,
-	};
-}
-
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getServerSideProps: GetServerSideProps<
+	{
+		post: TPost;
+	},
+	{
+		id: string;
+	}
+> = async ({ params }) => {
 	try {
+		if (!params) {
+			throw Error("Params not found!");
+		}
 		return {
 			props: {
-				post: await getPostById(params!["id"]),
+				post: await getPostById(params["id"]),
 			},
 		};
 	} catch (err) {
 		console.log("__posts/[id].tsx getStaticProps error: ", err);
 		return {
-			props: { post: {} },
+			redirect: {
+				destination: "/",
+				permanent: false,
+			},
 		};
 	}
 };
 
-export default function FBPost({ post }: TFBPost) {
+export default function FBPost({ post }: InferGetServerSidePropsType<typeof getServerSideProps>) {
 	const title = formatNewsTitle(post.message);
 	const paragraphs = post.message.split("\n");
 	return (
