@@ -1,6 +1,7 @@
 import "../styles/styles.scss";
 import type { AppProps } from "next/app";
 import { Darker_Grotesque } from "@next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 
 const darkerGrotesque = Darker_Grotesque({
 	subsets: ["vietnamese"],
@@ -11,6 +12,7 @@ export default function App({ Component, pageProps }: AppProps) {
 	return (
 		<main className={darkerGrotesque.className}>
 			<Component {...pageProps} />
+			<Analytics />
 		</main>
 	);
 }
