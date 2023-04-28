@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import CircleButton from "../Buttons/CircleButton";
-import { PROJECT_MIN_WIDTH_VW, TSeasonalProjectGeneralInfo } from "./setting";
+import { PROJECT_MIN_WIDTH_VW } from "./setting";
+import { TSeasonalProjectGeneralInfo } from "./types";
 
 const SeasonalProject = (props: TSeasonalProjectGeneralInfo) => {
 	const [hoverState, setHoverState] = useState<boolean>(false);

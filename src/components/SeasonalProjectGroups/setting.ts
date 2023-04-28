@@ -1,20 +1,13 @@
-import { TListContent, bold, createSpaceContentNode, link, listItem, plain, plainClose } from "../../services/ContentGenerator";
-import { Assert, Image } from "../../utils/types";
-
-export type TSeasonalProject = {
-	id: string;
-	title: string;
-	thumbnailImage: Image;
-	posterImage: Image;
-	listContent: TListContent;
-};
+import { bold, createSpaceContentNode, link, listItem, plain, plainClose } from "../../services/ContentGenerator";
+import { Assert } from "../../utils/types";
+import { TSeasonalProject, TSeasonalProjectGeneralInfo } from "./types";
 
 export const PROJECT_MIN_WIDTH = 680;
 export const PROJECT_MIN_WIDTH_VW = 45;
 
 const space = createSpaceContentNode();
 
-export const LIST_INFO_PROJECT = Assert<TSeasonalProject[]>([
+export const LIST_INFO_PROJECT: TSeasonalProject[] = [
 	{
 		id: "summer-camp-2023",
 		title: "SUMMER CAMP 2023",
@@ -173,9 +166,7 @@ export const LIST_INFO_PROJECT = Assert<TSeasonalProject[]>([
 			link("GO TORONTO WITH CIDESCO - Thông tin chung.docx=/contents/seasonal/goTorontoWithCidesco/GO TORONTO WITH CIDESCO - Thông tin chung.docx"),
 		],
 	},
-]);
-
-export type TSeasonalProjectGeneralInfo = Omit<TSeasonalProject, "listContent" | "posterImage">;
+];
 
 export const LIST_GENERAL_INFO_PROJECT: TSeasonalProjectGeneralInfo[] = LIST_INFO_PROJECT.map<TSeasonalProjectGeneralInfo>((item) => {
 	return {

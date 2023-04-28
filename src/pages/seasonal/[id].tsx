@@ -1,9 +1,10 @@
 import Head from "next/head";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { Navbar, Footer } from "../../components";
-import { LIST_INFO_PROJECT, TSeasonalProject } from "../../components/SeasonalProjectGroups/setting";
+import { LIST_INFO_PROJECT } from "../../components/SeasonalProjectGroups/setting";
 import { ParsedUrlQuery } from "querystring";
 import ContentGenerator from "../../services/ContentGenerator";
+import { TSeasonalProject } from "../../components/SeasonalProjectGroups/types";
 
 type Params = ParsedUrlQuery & {
 	id: TSeasonalProject["id"];
