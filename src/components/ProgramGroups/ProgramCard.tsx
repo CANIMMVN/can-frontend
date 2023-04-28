@@ -1,9 +1,9 @@
 import { useState } from "react";
 import CircleButton from "../Buttons/CircleButton";
-import { TProgramInfo } from "./types";
+import { TProgramGeneralInfo } from "./types";
 import { Direction } from "../../utils/types";
 
-export type TProgramCard = TProgramInfo & {
+export type TProgramCard = TProgramGeneralInfo & {
 	direction: Omit<Direction, Direction.Center>;
 };
 
@@ -15,8 +15,8 @@ const ProgramCard = (props: TProgramCard) => {
 			onMouseEnter={() => setHoverState(true)}
 			onMouseLeave={() => setHoverState(false)}>
 			<img
-				src={props.imgSrc}
-				alt={props.imgAlt}
+				src={props.thumbnailImage.imgSrc}
+				alt={props.thumbnailImage.imgAlt}
 				className="object-cover h-full w-full"
 			/>
 			<div className={`${props.direction === Direction.Left ? "left-4 md:left-10" : "right-4 md:right-10"} title-container flex flex-row justify-center items-center absolute bottom-[2%] md:bottom-[5%]`}>

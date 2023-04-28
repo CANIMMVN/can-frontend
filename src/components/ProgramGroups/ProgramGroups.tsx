@@ -1,7 +1,6 @@
-import { useRef } from "react";
 import { Direction, TComponent } from "../../utils/types";
 import ProgramCard from "./ProgramCard";
-import { LIST_PROGRAM_INFO } from "./setting";
+import { LIST_GENERAL_INFO_PROJECT } from "./setting";
 import ProgramSubGroup from "./ProgramSubGroup";
 
 type TSubComponent = {
@@ -10,7 +9,7 @@ type TSubComponent = {
 
 const ProgramGroups: TComponent & TSubComponent = () => {
 	return (
-	<section id="program-groups">
+		<section id="program-groups">
 			<div className="program-groups-container flex flex-col my-17.5 md:my-25 mx-15 md:mx-8">
 				<div className="title-container flex items-center justify-center w-25 md:w-40 h-6 md:h-10 border rounded-full border-black my-8">
 					<span className="font-bold text-xs md:text-2xl mb-0.5 md:mb-1">Chương trình</span>
@@ -20,15 +19,11 @@ const ProgramGroups: TComponent & TSubComponent = () => {
 						<ProgramSubGroup
 							direction={Direction.Left}
 							cardLeft={{
-								imgSrc: LIST_PROGRAM_INFO[0].imgSrc,
-								imgAlt: LIST_PROGRAM_INFO[0].imgAlt,
-								title: LIST_PROGRAM_INFO[0].title,
+								...LIST_GENERAL_INFO_PROJECT[0],
 								direction: Direction.Left,
 							}}
 							cardRight={{
-								imgSrc: LIST_PROGRAM_INFO[1].imgSrc,
-								imgAlt: LIST_PROGRAM_INFO[1].imgAlt,
-								title: LIST_PROGRAM_INFO[1].title,
+								...LIST_GENERAL_INFO_PROJECT[1],
 								direction: Direction.Right,
 							}}
 						/>
@@ -37,15 +32,11 @@ const ProgramGroups: TComponent & TSubComponent = () => {
 						<ProgramSubGroup
 							direction={Direction.Right}
 							cardLeft={{
-								imgSrc: LIST_PROGRAM_INFO[2].imgSrc,
-								imgAlt: LIST_PROGRAM_INFO[2].imgAlt,
-								title: LIST_PROGRAM_INFO[2].title,
+								...LIST_GENERAL_INFO_PROJECT[2],
 								direction: Direction.Left,
 							}}
 							cardRight={{
-								imgSrc: LIST_PROGRAM_INFO[3].imgSrc,
-								imgAlt: LIST_PROGRAM_INFO[3].imgAlt,
-								title: LIST_PROGRAM_INFO[3].title,
+								...LIST_GENERAL_INFO_PROJECT[3],
 								direction: Direction.Right,
 							}}
 						/>
@@ -54,15 +45,11 @@ const ProgramGroups: TComponent & TSubComponent = () => {
 						<ProgramSubGroup
 							direction={Direction.Left}
 							cardLeft={{
-								imgSrc: LIST_PROGRAM_INFO[4].imgSrc,
-								imgAlt: LIST_PROGRAM_INFO[4].imgAlt,
-								title: LIST_PROGRAM_INFO[4].title,
+								...LIST_GENERAL_INFO_PROJECT[4],
 								direction: Direction.Left,
 							}}
 							cardRight={{
-								imgSrc: LIST_PROGRAM_INFO[5].imgSrc,
-								imgAlt: LIST_PROGRAM_INFO[5].imgAlt,
-								title: LIST_PROGRAM_INFO[5].title,
+								...LIST_GENERAL_INFO_PROJECT[5],
 								direction: Direction.Right,
 							}}
 						/>
