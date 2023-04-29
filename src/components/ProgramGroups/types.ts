@@ -1,5 +1,13 @@
+import { TListContent } from "../../services/ContentGenerator";
+import { Image } from "../../utils/types";
+
 export type TProgramInfo = {
-	imgSrc: string;
-	imgAlt?: string;
-	title?: string;
+	id:string;
+	thumbnailTitle: string;
+	thumbnailImage: Image;
+	posterTitle: string;
+	posterImage: Image;
+	listContent: TListContent;
 };
+
+export type TProgramGeneralInfo = Omit<TProgramInfo, "listContent" | "posterImage" | "posterTitle">;
