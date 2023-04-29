@@ -59,7 +59,7 @@ export const LIST_PROGRAM_INFO: TProgramInfo[] = [
 			space,
 			space,
 			bold("Thông tin chi tiết:"),
-			link("CHƯƠNG TRÌNH TRẠI HÈ.docx=/contents/program/summerCamp/CHƯƠNG TRÌNH TRẠI HÈ.docx"),
+			link("CHƯƠNG TRÌNH TRẠI HÈ.docx=/contents/program/summerCamp/CHƯƠNG TRÌNH TRẠI HÈ.docx"),
 		],
 	},
 	{
@@ -128,6 +128,10 @@ export const LIST_PROGRAM_INFO: TProgramInfo[] = [
 			plain("Theo kinh nghiệm, khi đi du lịch Canada, các bạn không nên đem theo quá $5,000 USD tiền mặt. Trong trường hợp nếu cần thiết phải đem theo nhiều tiền mặt, khách du lịch phải tiến hành khai báo với hải quan và thực hiện một số thủ tục hành chính cần thiết."),
 			plain("Tốt nhất, để quá trình tham quan du lịch tại Canada diễn ra thuận lợi và thành công, các bạn chỉ nên đem số tiền mặt theo quy định, còn lại, chúng ta hãy thanh toán bằng thẻ tín dụng hoặc thẻ ATM cho các giao dịch khác."),
 			plain("Trên thực tế, chi phí du lịch Canada cũng không quá cao nếu bạn biết cách lên kế hoạch thật chu đáo và tỉ mỉ cũng như tính toán các chi phí thật khoa học. Hy vọng bài viết chúng tôi vừa chia sẻ đã cung cấp những thông tin thú vị và bổ ích cho các bạn trong chuyến đi Canada sắp tới."),
+			space,
+			space,
+			bold("Thông tin chi tiết:"),
+			link("DU LỊCH CANADA CẦN BAO NHIÊU TIỀN.docx=/contents/program/tourism/DU LỊCH CANADA CẦN BAO NHIÊU TIỀN.docx"),
 		],
 	},
 	{
@@ -211,7 +215,7 @@ export const LIST_PROGRAM_INFO: TProgramInfo[] = [
 			space,
 			space,
 			bold("Thông tin chi tiết:"),
-			link("CHƯƠNG TRÌNH DU HỌC.docx=/contents/program/studyAbroad/CHƯƠNG TRÌNH DU HỌC.docx"),
+			link("CHƯƠNG TRÌNH DU HỌC.docx=/contents/program/studyAbroad/CHƯƠNG TRÌNH DU HỌC.docx"),
 		],
 	},
 	{
