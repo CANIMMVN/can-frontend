@@ -47,6 +47,12 @@ export const link = (content: TContentNode["content"]) => {
 	return createContentNode(ContentType.LINK, content);
 };
 
+// Support Tailwind import classes
+// Tailwind only processes classes in static or was existed in the component' UI - render()
+export const ContentGeneratorToolkit = () => {
+	return <div className="hidden flex relative text-xl text-strongBlue font-medium font-bold my-2 my-4 h-4"></div>;
+};
+
 export default (listContent: TListContent) => {
 	const generate = (contentNode: TContentNode, index: number) => {
 		const typeNode = contentNode.type;

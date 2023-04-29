@@ -2,7 +2,7 @@ import Head from "next/head";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { Navbar, Footer } from "../../components";
 import { ParsedUrlQuery } from "querystring";
-import ContentGenerator from "../../services/ContentGenerator";
+import ContentGenerator, { ContentGeneratorToolkit } from "../../services/ContentGenerator";
 import { TProgramInfo } from "../../components/ProgramGroups/types";
 import { LIST_PROGRAM_INFO } from "../../components/ProgramGroups/setting";
 
@@ -69,6 +69,7 @@ const seasonalPost: NextPage<TProgramInfoProps> = ({ data }) => {
 					<div className="content-container w-[80%] mx-auto">{ContentGenerator(data.listContent)}</div>
 				</div>
 				<Footer />
+				<ContentGeneratorToolkit/>
 			</div>
 		</>
 	);
