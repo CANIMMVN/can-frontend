@@ -15,7 +15,10 @@ const SeasonalProject = (props: TSeasonalProjectGeneralInfo) => {
 			}}
 			onMouseEnter={() => setHoverState(true)}
 			onMouseLeave={() => setHoverState(false)}>
-			<Link href={`/seasonal/${props.id}`}>
+			<Link
+				href={`/seasonal/${props.id}`}
+				target="_blank"
+				rel="noopener noreferrer">
 				<div className="flex flex-row items-end mb-2 md:mb-3">
 					<span className="text-2xl md:text-4xl leading-none mr-2 overflow-hidden text-ellipsis whitespace-nowrap">{props.title}</span>
 					<CircleButton
