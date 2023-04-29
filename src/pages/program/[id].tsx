@@ -37,7 +37,7 @@ export const getStaticProps: GetStaticProps<TProgramInfoProps, Params> = async (
 	};
 };
 
-const seasonalPost: NextPage<TProgramInfoProps> = ({ data }) => {
+const ProgramPost: NextPage<TProgramInfoProps> = ({ data }) => {
 	return (
 		<>
 			<Head>
@@ -75,4 +75,4 @@ const seasonalPost: NextPage<TProgramInfoProps> = ({ data }) => {
 	);
 };
 
-export default seasonalPost;
+export default ProgramPost;

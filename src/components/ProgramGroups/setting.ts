@@ -64,7 +64,7 @@ export const LIST_PROGRAM_INFO: TProgramInfo[] = [
 		],
 	},
 	{
-		id: "",
+		id: "job",
 		thumbnailTitle: "Việc làm",
 		thumbnailImage: {
 			imgSrc: "assets/programGroups/vieclam.jpg",

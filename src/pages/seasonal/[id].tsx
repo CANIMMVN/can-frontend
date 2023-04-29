@@ -37,7 +37,7 @@ export const getStaticProps: GetStaticProps<TSeasonalProjectProps, Params> = asy
 	};
 };
 
-const seasonalPost: NextPage<TSeasonalProjectProps> = ({ data }) => {
+const SeasonalPost: NextPage<TSeasonalProjectProps> = ({ data }) => {
 	return (
 		<>
 			<Head>
@@ -75,4 +75,4 @@ const seasonalPost: NextPage<TSeasonalProjectProps> = ({ data }) => {
 	);
 };
 
-export default seasonalPost;
+export default SeasonalPost;
