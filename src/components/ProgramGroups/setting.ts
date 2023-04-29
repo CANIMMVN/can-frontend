@@ -6,11 +6,12 @@ const space = createSpaceContentNode();
 export const LIST_PROGRAM_INFO: TProgramInfo[] = [
 	{
 		id: "summer-camp",
-		title: "Trại hè",
+		thumbnailTitle: "Trại hè",
 		thumbnailImage: {
 			imgSrc: "/contents/program/summerCamp/Thumbnail-SummerCamp.jpg",
 			imgAlt: "Thumbnail-SummerCamp.jpg",
 		},
+		posterTitle: "CHƯƠNG TRÌNH TRẠI HÈ",
 		posterImage: {
 			imgSrc: "/contents/program/summerCamp/Poster-SummerCamp.jpg",
 			imgAlt: "Poster-SummerCamp.jpg",
@@ -64,11 +65,12 @@ export const LIST_PROGRAM_INFO: TProgramInfo[] = [
 	},
 	{
 		id: "",
-		title: "Việc làm",
+		thumbnailTitle: "Việc làm",
 		thumbnailImage: {
 			imgSrc: "assets/programGroups/vieclam.jpg",
 			imgAlt: "vieclam.jpg",
 		},
+		posterTitle: "",
 		posterImage: {
 			imgSrc: "#",
 			imgAlt: "#",
@@ -77,11 +79,12 @@ export const LIST_PROGRAM_INFO: TProgramInfo[] = [
 	},
 	{
 		id: "tourism",
-		title: "Du lịch",
+		thumbnailTitle: "Du lịch",
 		thumbnailImage: {
 			imgSrc: "/contents/program/tourism/Thumbnail-Tourism.jpg",
 			imgAlt: "Thumbnail-Tourism.jpg",
 		},
+		posterTitle: "DU LỊCH CANADA CẦN BAO NHIÊU TIỀN",
 		posterImage: {
 			imgSrc: "/contents/program/tourism/Poster-Tourism.jpg",
 			imgAlt: "Poster-Tourism.jpg",
@@ -136,11 +139,12 @@ export const LIST_PROGRAM_INFO: TProgramInfo[] = [
 	},
 	{
 		id: "settled",
-		title: "Định cư",
+		thumbnailTitle: "Định cư",
 		thumbnailImage: {
 			imgSrc: "/contents/program/settled/Thumbnail-Settled.jpg",
 			imgAlt: "Thumbnail-Settled.jpg",
 		},
+		posterTitle: "CHƯƠNG TRÌNH ĐỊNH CƯ",
 		posterImage: {
 			imgSrc: "/contents/program/settled/Poster-Settled.jpg",
 			imgAlt: "Poster-Settled.jpg",
@@ -181,17 +185,17 @@ export const LIST_PROGRAM_INFO: TProgramInfo[] = [
 	},
 	{
 		id: "study-abroad",
-		title: "Du học",
+		thumbnailTitle: "Du học",
 		thumbnailImage: {
 			imgSrc: "/contents/program/studyAbroad/Thumbnail-StudyAbroad.jpg",
 			imgAlt: "Thumbnail-StudyAbroad.jpg",
 		},
+		posterTitle: "CHƯƠNG TRÌNH DU HỌC",
 		posterImage: {
 			imgSrc: "/contents/program/studyAbroad/Poster-StudyAbroad.jpg",
 			imgAlt: "Poster-StudyAbroad.jpg",
 		},
 		listContent: [
-			bold("CHƯƠNG TRÌNH DU HỌC"),
 			plain("Nhu cầu du học tại Canada đã tăng mạnh trong những năm gần đây. Là quốc gia sở hữu 26 Đại học xuất sắc nhất thế giới, Canada thu hút hơn 388,000 sinh viên quốc tế, trong đó có hơn du học sinh Việt Nam xếp thứ 5 trong số các quốc gia có nhiều du học sinh nhất đang theo học tại Canada."),
 			bold("1. Du học diện SDS - Không cần chứng minh tài chính"),
 			plain("Chỉ dành cho học sinh đã tốt nghiệp lớp 12 và đăng ký cao đẳng, đại học tại Canada."),
@@ -220,11 +224,12 @@ export const LIST_PROGRAM_INFO: TProgramInfo[] = [
 	},
 	{
 		id: "pathway",
-		title: "Pathway",
+		thumbnailTitle: "Pathway",
 		thumbnailImage: {
 			imgSrc: "/contents/program/pathway/Thumbnail-Pathway.jpg",
 			imgAlt: "Thumbnail-Pathway.jpg",
 		},
+		posterTitle: "CHƯƠNG TRÌNH PATHWAY",
 		posterImage: {
 			imgSrc: "/contents/program/pathway/Poster-Pathway.jpg",
 			imgAlt: "Poster-Pathway.jpg",
@@ -256,8 +261,6 @@ export const LIST_PROGRAM_INFO: TProgramInfo[] = [
 
 export const LIST_GENERAL_INFO_PROJECT: TProgramGeneralInfo[] = LIST_PROGRAM_INFO.map<TProgramGeneralInfo>((item) => {
 	return {
-		id: item.id,
-		thumbnailImage: { ...item.thumbnailImage },
-		title: item.title,
+		...item,
 	};
 });

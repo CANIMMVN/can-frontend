@@ -41,7 +41,7 @@ const seasonalPost: NextPage<TProgramInfoProps> = ({ data }) => {
 	return (
 		<>
 			<Head>
-				<title>{data.title}</title>
+				<title>{data.posterTitle}</title>
 				<link
 					rel="icon"
 					type="image/svg+xml"
@@ -53,7 +53,7 @@ const seasonalPost: NextPage<TProgramInfoProps> = ({ data }) => {
 				<Navbar isDynamic={false} />
 				<div className="post-container-wrap w-[80%] mx-auto mt-36 mb-6 md:mb-5">
 					<div className="title-container text-center mb-6 md:mb-5">
-						<span className="title text-[40px] md:text-[60px] lg:text-[80px] font-bold uppercase">{data.title}</span>
+						<span className="title text-[40px] md:text-[60px] lg:text-[80px] font-bold uppercase">{data.posterTitle}</span>
 					</div>
 				</div>
 				<div className="image-container-wrap relative mb-10 md:mb-20 after:content-[''] after:absolute after:-z-10 after:w-full after:h-[100vh] after:bg-lightBlue after:bottom-1/2">
