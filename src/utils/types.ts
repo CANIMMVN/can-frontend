@@ -15,7 +15,7 @@ export enum State {
 	FAILURE,
 }
 
-export type Image = {
+export type TImage = {
 	imgSrc: string;
 	imgAlt: string;
 };
