@@ -1,7 +1,5 @@
-import { bold, createSpaceContentNode, link, listItem, plain } from "../../services/ContentGenerator";
+import { bold, link, listItem, plain, space } from "../../services/ContentGenerator";
 import { TProgramGeneralInfo, TProgramInfo } from "./types";
-
-const space = createSpaceContentNode();
 
 export const LIST_PROGRAM_INFO: TProgramInfo[] = [
 	{
@@ -60,7 +58,7 @@ export const LIST_PROGRAM_INFO: TProgramInfo[] = [
 			space,
 			space,
 			bold("Thông tin chi tiết:"),
-			link("CHƯƠNG TRÌNH TRẠI HÈ.docx=/contents/program/summerCamp/CHƯƠNG TRÌNH TRẠI HÈ.docx"),
+			link("/contents/program/summerCamp/CHƯƠNG TRÌNH TRẠI HÈ.docx", "CHƯƠNG TRÌNH TRẠI HÈ.docx"),
 		],
 	},
 	{
@@ -134,7 +132,7 @@ export const LIST_PROGRAM_INFO: TProgramInfo[] = [
 			space,
 			space,
 			bold("Thông tin chi tiết:"),
-			link("DU LỊCH CANADA CẦN BAO NHIÊU TIỀN.docx=/contents/program/tourism/DU LỊCH CANADA CẦN BAO NHIÊU TIỀN.docx"),
+			link("/contents/program/tourism/DU LỊCH CANADA CẦN BAO NHIÊU TIỀN.docx", "DU LỊCH CANADA CẦN BAO NHIÊU TIỀN.docx"),
 		],
 	},
 	{
@@ -180,7 +178,7 @@ export const LIST_PROGRAM_INFO: TProgramInfo[] = [
 			space,
 			space,
 			bold("Thông tin chi tiết:"),
-			link("CHƯƠNG TRÌNH ĐỊNH CƯ.docx=/contents/program/settled/CHƯƠNG TRÌNH ĐỊNH CƯ.docx"),
+			link("/contents/program/settled/CHƯƠNG TRÌNH ĐỊNH CƯ.docx", "CHƯƠNG TRÌNH ĐỊNH CƯ.docx"),
 		],
 	},
 	{
@@ -219,7 +217,7 @@ export const LIST_PROGRAM_INFO: TProgramInfo[] = [
 			space,
 			space,
 			bold("Thông tin chi tiết:"),
-			link("CHƯƠNG TRÌNH DU HỌC.docx=/contents/program/studyAbroad/CHƯƠNG TRÌNH DU HỌC.docx"),
+			link("/contents/program/studyAbroad/CHƯƠNG TRÌNH DU HỌC.docx", "CHƯƠNG TRÌNH DU HỌC.docx"),
 		],
 	},
 	{
@@ -254,7 +252,7 @@ export const LIST_PROGRAM_INFO: TProgramInfo[] = [
 			space,
 			space,
 			bold("Thông tin chi tiết:"),
-			link("CHƯƠNG TRÌNH PATHWAY.docx=/contents/program/pathway/CHƯƠNG TRÌNH PATHWAY.docx"),
+			link("/contents/program/pathway/CHƯƠNG TRÌNH PATHWAY.docx", "CHƯƠNG TRÌNH PATHWAY.docx"),
 		],
 	},
 ];

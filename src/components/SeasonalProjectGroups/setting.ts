@@ -1,11 +1,8 @@
-import { bold, createSpaceContentNode, link, listItem, plain, plainClose } from "../../services/ContentGenerator";
-import { Assert } from "../../utils/types";
+import { bold, space, link, listItem, plain, plainClose } from "../../services/ContentGenerator";
 import { TSeasonalProject, TSeasonalProjectGeneralInfo } from "./types";
 
 export const PROJECT_MIN_WIDTH = 680;
 export const PROJECT_MIN_WIDTH_VW = 45;
-
-const space = createSpaceContentNode();
 
 export const LIST_INFO_PROJECT: TSeasonalProject[] = [
 	{
@@ -62,8 +59,8 @@ export const LIST_INFO_PROJECT: TSeasonalProject[] = [
 			space,
 			space,
 			bold("Thông tin chi tiết:"),
-			link("Brochure SUMMER CAMP 2023 - PROJECT.pdf=/contents/seasonal/summerCamp2023/Brochure SUMMER CAMP 2023 - PROJECT.pdf"),
-			link("Summer Camp 2023 - Thông tin chung.docx=/contents/seasonal/summerCamp2023/Summer Camp 2023 - Thông tin chung.docx"),
+			link("/contents/seasonal/summerCamp2023/Brochure SUMMER CAMP 2023 - PROJECT.pdf", "Brochure SUMMER CAMP 2023 - PROJECT.pdf"),
+			link("/contents/seasonal/summerCamp2023/Summer Camp 2023 - Thông tin chung.docx", "Summer Camp 2023 - Thông tin chung.docx"),
 		],
 	},
 	{
@@ -118,8 +115,8 @@ export const LIST_INFO_PROJECT: TSeasonalProject[] = [
 			space,
 			space,
 			bold("Thông tin chi tiết:"),
-			link("Winter Camp 2023.pdf=/contents/seasonal/winterCamp2023/Winter Camp 2023.pdf"),
-			link("Winter Camp 2023 - Thông Tin chung.docx=/contents/seasonal/winterCamp2023/Winter Camp 2023 - Thông Tin chung.docx"),
+			link("/contents/seasonal/winterCamp2023/Winter Camp 2023.pdf", "Winter Camp 2023.pdf"),
+			link("/contents/seasonal/winterCamp2023/Winter Camp 2023 - Thông Tin chung.docx", "Winter Camp 2023 - Thông Tin chung.docx"),
 		],
 	},
 	{
@@ -155,15 +152,15 @@ export const LIST_INFO_PROJECT: TSeasonalProject[] = [
 			plain("Nhận voucher $100 CAD - $200 CAD khi sử dụng dịch vụ du học và định cư thông qua công ty Can Immigration Vietnam."),
 			space,
 			plain("Nhanh tay đăng ký ngay để tranh các suất học bổng độc quyền siêu giới hạn tại đường link:"),
-			link("GO TORONTO WITH CIDESCO - DU HỌC CANADA NGÀNH LÀM ĐẸP=https://forms.gle/HyKSyyuPZoYJ87zg9"),
+			link("https://forms.gle/HyKSyyuPZoYJ87zg9", "GO TORONTO WITH CIDESCO - DU HỌC CANADA NGÀNH LÀM ĐẸP"),
 			space,
 			plain("Địa điểm: Hội trường 903, Tầng 9, Diamond Plaza - 34 Lê Duẩn, Phường Bến Nghé, Quận 1, TP.HCM."),
 			plain("Thời gian: Từ 08:30 AM đến 12:00 PM vào THỨ BẢY ngày 25/03/2023."),
 			space,
 			space,
 			bold("Thông tin chi tiết:"),
-			link("Brochure - Go Toronto With CIDESCO.pdf=/contents/seasonal/goTorontoWithCidesco/Brochure - Go Toronto With CIDESCO.pdf"),
-			link("GO TORONTO WITH CIDESCO - Thông tin chung.docx=/contents/seasonal/goTorontoWithCidesco/GO TORONTO WITH CIDESCO - Thông tin chung.docx"),
+			link("/contents/seasonal/goTorontoWithCidesco/Brochure - Go Toronto With CIDESCO.pdf", "Brochure - Go Toronto With CIDESCO.pdf"),
+			link("/contents/seasonal/goTorontoWithCidesco/GO TORONTO WITH CIDESCO - Thông tin chung.docx", "GO TORONTO WITH CIDESCO - Thông tin chung.docx"),
 		],
 	},
 ];
