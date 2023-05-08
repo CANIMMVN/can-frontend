@@ -65,15 +65,20 @@ export const LIST_PROGRAM_INFO: TProgramInfo[] = [
 		id: "job",
 		thumbnailTitle: "Việc làm",
 		thumbnailImage: {
-			imgSrc: "assets/programGroups/vieclam.jpg",
-			imgAlt: "vieclam.jpg",
+			imgSrc: "/contents/program/job/Poster-Job.jpg",
+			imgAlt: "Poster-Job.jpg",
 		},
-		posterTitle: "",
+		posterTitle: "CHƯƠNG TRÌNH VIỆC LÀM",
 		posterImage: {
-			imgSrc: "#",
-			imgAlt: "#",
+			imgSrc: "/contents/program/job/Poster-Job.jpg",
+			imgAlt: "Poster-Job.jpg",
 		},
-		listContent: [],
+		listContent: [
+			image("/contents/program/job/slides/slide-1.jpg", "TEER 0 & 1: VIỆC LÀM QUẢN LÝ, ĐIỀU HÀNH-slide-1.jpg"), //
+			image("/contents/program/job/slides/slide-2.jpg", "TEER 2-slide-2.jpg"),
+			image("/contents/program/job/slides/slide-3.jpg", "TEER 3:-slide-3.jpg"),
+			image("/contents/program/job/slides/slide-4.jpg", "TEER 4 & 5:-slide-4.jpg"),
+		],
 	},
 	{
 		id: "tourism",
