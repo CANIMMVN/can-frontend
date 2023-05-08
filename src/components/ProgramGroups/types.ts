@@ -1,12 +1,12 @@
 import { TListContent } from "../../services/ContentGenerator";
-import { Image } from "../../utils/types";
+import { TImage } from "../../utils/types";
 
 export type TProgramInfo = {
 	id:string;
 	thumbnailTitle: string;
-	thumbnailImage: Image;
+	thumbnailImage: TImage;
 	posterTitle: string;
-	posterImage: Image;
+	posterImage: TImage;
 	listContent: TListContent;
 };
 

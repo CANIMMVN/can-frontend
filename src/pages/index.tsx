@@ -2,9 +2,10 @@ import Head from "next/head";
 import { Banner, Navbar, TagInfoGroups, SeasonalProjectGroups, NewsGroup, ProgramGroups, ServiceGroups, Consultation, AdvisoryGroups, ApprovalCases, Footer } from "../components";
 import { ModalContext, ModalPortal, Toaster } from "../components/Toolkits";
 import { useState } from "react";
-import { GetServerSideProps, InferGetServerSidePropsType} from "next";
+import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import { getPageNews } from "../services/facebook-api";
 import { TNews } from "../components/NewsGroup/types";
+import { ContentGeneratorToolkit } from "../services/ContentGenerator";
 
 export const getServerSideProps: GetServerSideProps<{
 	news: TNews[];
@@ -56,7 +57,9 @@ export default function Home({ news }: InferGetServerSidePropsType<typeof getSer
 				<Footer />
 				<div
 					id="tool-kit"
-					className="hidden text-white stroke-white stroke-strongPink mr-2"></div>
+					className="hidden text-white stroke-white stroke-strongPink mr-2 my-10 my-2">
+					<ContentGeneratorToolkit />
+				</div>
 			</div>
 			{isOpenModal ? <ModalPortal handleOpenModal={setIsOpenModal}>{modalComponent}</ModalPortal> : <></>}
 			<Toaster />

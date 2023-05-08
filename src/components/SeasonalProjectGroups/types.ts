@@ -1,11 +1,11 @@
 import { TListContent } from "../../services/ContentGenerator";
-import { Image } from "../../utils/types";
+import { TImage } from "../../utils/types";
 
 export type TSeasonalProject = {
 	id: string;
 	title: string;
-	thumbnailImage: Image;
-	posterImage: Image;
+	thumbnailImage: TImage;
+	posterImage: TImage;
 	listContent: TListContent;
 };
 

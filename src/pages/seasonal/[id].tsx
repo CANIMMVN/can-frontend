@@ -3,7 +3,7 @@ import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { Navbar, Footer } from "../../components";
 import { LIST_INFO_PROJECT } from "../../components/SeasonalProjectGroups/setting";
 import { ParsedUrlQuery } from "querystring";
-import ContentGenerator, { ContentGeneratorToolkit } from "../../services/ContentGenerator";
+import ContentGenerator from "../../services/ContentGenerator";
 import { TSeasonalProject } from "../../components/SeasonalProjectGroups/types";
 
 type Params = ParsedUrlQuery & {
@@ -69,7 +69,6 @@ const SeasonalPost: NextPage<TSeasonalProjectProps> = ({ data }) => {
 					<div className="content-container w-[80%] mx-auto">{ContentGenerator(data.listContent)}</div>
 				</div>
 				<Footer />
-				<ContentGeneratorToolkit/>
 			</div>
 		</>
 	);
