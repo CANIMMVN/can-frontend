@@ -78,7 +78,14 @@ export const link = (link: TLinkContentNode["link"], displayText: TLinkContentNo
  */
 
 export const ContentGeneratorToolkit = () => {
-	return <div className="hidden flex relative text-xl text-strongBlue font-medium font-bold my-2 my-4 h-4"></div>;
+	return (
+		<div className="content-generatetor-toolkit">
+			<div className="flex relative"></div>
+			<div className="text-xl text-strongBlue font-bold font-medium"></div>
+			<div className="h-4"></div>
+			<div className="my-2 my-4"></div>
+		</div>
+	);
 };
 
 const ContentGenerator = (listContent: TListContent) => {
