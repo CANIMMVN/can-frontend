@@ -1,6 +1,5 @@
 // CONTENT TYPE DECLARE
-
-import { DistributiveOmit, _Assert } from "../utils/types";
+import { DistributiveOmit, TImage, _Assert } from "../utils/types";
 
 // Normal
 export type TNormalContentNode = {
@@ -19,8 +18,12 @@ export type TLinkContentNode = {
 	displayText: string;
 };
 
+export type TImageContentNode = {
+	type: "IMAGE";
+} & TImage;
+
 // Utility
-export type TContentNode = TNormalContentNode | TSpaceContentNode | TLinkContentNode;
+export type TContentNode = TNormalContentNode | TSpaceContentNode | TLinkContentNode | TImageContentNode;
 
 export type TListContent = TContentNode[];
 
@@ -53,8 +56,14 @@ export const createSpecialContentNode = <T extends Exclude<TContentNode, TNormal
 			_Assert<DistributiveOmit<TLinkContentNode, "type">>(content);
 			return {
 				type,
-				...content
+				...content,
 			} as TLinkContentNode;
+		case "IMAGE":
+			_Assert<DistributiveOmit<TImageContentNode, "type">>(content);
+			return {
+				type,
+				...content,
+			} as TImageContentNode;
 		default:
 			return {
 				type,
@@ -71,6 +80,11 @@ export const link = (link: TLinkContentNode["link"], displayText: TLinkContentNo
 		displayText,
 	});
 
+export const image = (imgSrc: TImageContentNode["imgSrc"], imgAlt: TImageContentNode["imgAlt"]) =>
+	createSpecialContentNode<TImageContentNode>("IMAGE", {
+		imgSrc,
+		imgAlt,
+	});
 /**
  * Support Tailwind import classes`
  * Tailwind only processes classes in static or was existed in the component' UI - render()
@@ -144,6 +158,15 @@ const ContentGenerator = (listContent: TListContent) => {
 						download>
 						{contentNode.displayText}
 					</a>
+				);
+			case "IMAGE":
+				return (
+					<img
+						key={index}
+						src={contentNode.imgSrc}
+						alt={contentNode.imgAlt}
+						className="mx-auto my-10"
+					/>
 				);
 			default:
 				return <></>;
