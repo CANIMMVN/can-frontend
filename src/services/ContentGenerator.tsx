@@ -145,11 +145,6 @@ const ContentGenerator = (listContent: TListContent) => {
 						className="flex h-4"></span>
 				);
 			case "LINK":
-				console.log(contentNode);
-				console.log(contentNode.link);
-
-				console.log(contentNode.displayText);
-				console.log("---------------");
 				return (
 					<a
 						key={index}
